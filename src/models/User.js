@@ -16,6 +16,10 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    profileImage: {
+      type: String, // Assuming the profile image will be stored as a URL
+      default: "", // You can set a default image if needed
+    },
   },
   { timestamps: true }
 );

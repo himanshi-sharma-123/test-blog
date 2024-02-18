@@ -28,7 +28,7 @@ const BlogDetails = (ctx) => {
   useEffect(() => {
     async function fetchComments() {
       const res = await fetch(
-        `https://blogs-app-web.vercel.app/api/comment/${ctx.params.id}`,
+        `http://localhost:3000/api/comment/${ctx.params.id}`,
         { cache: "no-store" }
       );
       const comments = await res.json();
@@ -41,7 +41,7 @@ const BlogDetails = (ctx) => {
   useEffect(() => {
     async function fetchBlog() {
       const res = await fetch(
-        `https://blogs-app-web.vercel.app/api/blog/${ctx.params.id}`,
+        `http://localhost:3000/api/blog/${ctx.params.id}`,
         { cache: "no-store" }
       );
       const blog = await res.json();
@@ -61,7 +61,7 @@ const BlogDetails = (ctx) => {
 
       if (confirmModal) {
         const res = await fetch(
-          `https://blogs-app-web.vercel.app/api/blog/${ctx.params.id}`,
+          `http://localhost:3000/api/blog/${ctx.params.id}`,
           {
             headers: {
               Authorization: `Bearer ${session?.user?.accessToken}`,
@@ -82,7 +82,7 @@ const BlogDetails = (ctx) => {
   const handleLike = async () => {
     try {
       const res = await fetch(
-        `https://blogs-app-web.vercel.app/api/blog/${ctx.params.id}/like`,
+        `http://localhost:3000/api/blog/${ctx.params.id}/like`,
         {
           headers: {
             Authorization: `Bearer ${session?.user?.accessToken}`,
@@ -119,7 +119,7 @@ const BlogDetails = (ctx) => {
         text: commentText,
       };
 
-      const res = await fetch(`https://blogs-app-web.vercel.app/api/comment`, {
+      const res = await fetch(`http://localhost:3000/api/comment`, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${session?.user?.accessToken}`,
@@ -245,7 +245,7 @@ export default BlogDetails;
 //   useEffect(() => {
 //     async function fetchComments() {
 //       const res = await fetch(
-//         `https://blogs-app-web.vercel.app/api/comment/${ctx.params.id}`,
+//         `http://localhost:3000/api/comment/${ctx.params.id}`,
 //         { cache: "no-store" }
 //       );
 //       const comments = await res.json();
@@ -258,7 +258,7 @@ export default BlogDetails;
 //   useEffect(() => {
 //     async function fetchBlog() {
 //       const res = await fetch(
-//         `https://blogs-app-web.vercel.app/api/blog/${ctx.params.id}`,
+//         `http://localhost:3000/api/blog/${ctx.params.id}`,
 //         { cache: "no-store" }
 //       );
 //       const blog = await res.json();
@@ -278,7 +278,7 @@ export default BlogDetails;
 
 //       if (confirmModal) {
 //         const res = await fetch(
-//           `https://blogs-app-web.vercel.app/api/blog/${ctx.params.id}`,
+//           `http://localhost:3000/api/blog/${ctx.params.id}`,
 //           {
 //             headers: {
 //               Authorization: `Bearer ${session?.user?.accessToken}`,
@@ -298,7 +298,7 @@ export default BlogDetails;
 //   const handleLike = async () => {
 //     try {
 //       const res = await fetch(
-//         `https://blogs-app-web.vercel.app/api/blog/${ctx.params.id}/like`,
+//         `http://localhost:3000/api/blog/${ctx.params.id}/like`,
 //         {
 //           headers: {
 //             Authorization: `Bearer ${session?.user?.accessToken}`,
@@ -334,7 +334,7 @@ export default BlogDetails;
 //         text: commentText,
 //       };
 
-//       const res = await fetch(`https://blogs-app-web.vercel.app/api/comment`, {
+//       const res = await fetch(`http://localhost:3000/api/comment`, {
 //         headers: {
 //           "Content-Type": "application/json",
 //           Authorization: `Bearer ${session?.user?.accessToken}`,

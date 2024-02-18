@@ -1,4 +1,4 @@
-// https://blogs-app-web.vercel.app/api/register
+// http://localhost:3000/api/register
 
 import db from "@/lib/db";
 import bcrypt from "bcrypt";
@@ -7,7 +7,7 @@ import User from "@/models/User";
 export async function POST(req) {
   try {
     await db.connect();
-    const { username, email, password: pass } = await req.json();
+    const { username, email, password: pass, profileImage } = await req.json();
     const isExisting = await User.findOne({ email });
     if (isExisting) {
       throw new Error("User already exists");
@@ -18,6 +18,7 @@ export async function POST(req) {
       username,
       email,
       password: hashedPassword,
+      profileImage,
     });
 
     const { password, ...user } = newUser._doc; // ._doc -> the values of the user

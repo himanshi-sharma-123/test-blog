@@ -21,15 +21,12 @@ const BlogCard = ({
 
   const handleLike = async () => {
     try {
-      const res = await fetch(
-        `https://blogs-app-web.vercel.app/api/blog/${_id}/like`,
-        {
-          headers: {
-            Authorization: `Bearer ${session?.user?.accessToken}`,
-          },
-          method: "PUT",
-        }
-      );
+      const res = await fetch(`http://localhost:3000/api/blog/${_id}/like`, {
+        headers: {
+          Authorization: `Bearer ${session?.user?.accessToken}`,
+        },
+        method: "PUT",
+      });
 
       if (res.ok) {
         if (isLiked) {
