@@ -196,7 +196,12 @@ const BlogDetails = (ctx) => {
         </div>
         <div className={classes.commentSection}>
           <div className={classes.commentInput}>
-            <Image src={person} width="45" height="45" alt="" />
+            <Image
+              src={session?.user.profileImage}
+              width="45"
+              height="45"
+              alt=""
+            />
             <input
               value={commentText}
               type="text"
