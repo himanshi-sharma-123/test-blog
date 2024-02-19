@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import Provider from "@/Provider";
+import NextTopLoader from "nextjs-toploader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +18,8 @@ export default function RootLayout({ children, session }) {
       <body className={inter.className}>
         <Provider>
           <Navbar />
+          <NextTopLoader color="#10c142" />
+
           {children}
           <Footer />
         </Provider>
