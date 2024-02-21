@@ -13,22 +13,30 @@ export default async function Home() {
   const blogs = await fetchBlogs();
   return (
     <div className={classes.container}>
-      <div>
-        <Image
-          className={classes.hero}
-          src="https://images.unsplash.com/photo-1444065707204-12decac917e8?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          width="2000"
-          height="800"
-        />
+      <div className={classes.hero}>
+        <h1 className={classes.title}>
+          Photography is the beauty of life captured!!{" "}
+        </h1>
+        {/* <h1 className={classes.title}>
+          Blogging is hard because of the grind required to stay interesting and
+          relevant!!{" "}
+        </h1> */}
       </div>
-      {blogs?.length > 0 && <h2>Our Blogs</h2>}
+      {blogs?.length > 0 && <h2>Our Users Blogs</h2>}
       <div className={classes.wrapper}>
-        {blogs?.length > 0 ? (
-          blogs.map((blog) => <BlogCard key={blog._id} blog={blog} />)
-        ) : (
-          <h3 className={classes.noBlogs}>No blogs are currently</h3>
-        )}
+        {blogs.map((blog) => (
+          <BlogCard key={blog._id} blog={blog} />
+        ))}
       </div>
     </div>
   );
 }
+//   {blogs?.length > 0 && <h2>Our Users Blogs</h2>}
+//   <div className={classes.wrapper}>
+//     {blogs?.length > 0 ? (
+//       blogs.map((blog) => <BlogCard key={blog._id} blog={blog} />)
+//     ) : (
+//       <h3 className={classes.noBlogs}>No blogs are currently</h3>
+//     )}
+//   </div>
+// </div>
