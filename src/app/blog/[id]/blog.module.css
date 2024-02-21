@@ -198,3 +198,57 @@
   font-size: 32px;
   font-weight: bold;
 }
+
+@media (max-width: 768px) {
+  .wrapper {
+    width: 90%;
+    margin-top: 3rem;
+  }
+
+  .row {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .row > .title {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .category {
+    justify-content: center;
+  }
+
+  .commentSection {
+    width: 90%;
+  }
+
+  .commentInput > input {
+    width: 70%;
+  }
+}
+
+/* Para telas muito pequenas, como celulares em modo retrato */
+@media (max-width: 480px) {
+  .wrapper {
+    margin-top: 2rem;
+  }
+
+  .row > .title {
+    font-size: 24px;
+  }
+
+  .category {
+    font-size: 16px;
+    gap: 1rem;
+  }
+
+  .commentSection {
+    width: 95%;
+  }
+
+  .commentInput > input {
+    width: 60%;
+  }
+}
