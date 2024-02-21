@@ -22,11 +22,13 @@ export default async function Home() {
           relevant!!{" "}
         </h1> */}
       </div>
-      {blogs?.length > 0 && <h2>Our Users Blogs</h2>}
+      <h2>Our Users Blogs</h2>
       <div className={classes.wrapper}>
-        {blogs.map((blog) => (
-          <BlogCard key={blog._id} blog={blog} />
-        ))}
+        {blogs?.length > 0 ? (
+          blogs.map((blog) => <BlogCard key={blog._id} blog={blog} />)
+        ) : (
+          <h3 className={classes.noBlogs}>No blogs are currently</h3>
+        )}
       </div>
     </div>
   );

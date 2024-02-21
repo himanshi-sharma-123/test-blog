@@ -6,9 +6,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { AiFillLike, AiOutlineLike } from "react-icons/ai";
 import { useSession } from "next-auth/react";
+import { format } from "timeago.js";
 
 const BlogCard = ({
-  blog: { title, desc, imageUrl, likes, authorId, _id },
+  blog: { title, desc, imageUrl, likes, authorId, _id, createdAt },
 }) => {
   const { data: session } = useSession();
   const [isLiked, setIsLiked] = useState(false);
@@ -52,9 +53,9 @@ const BlogCard = ({
           <div className={classes.left}>
             <h3>{title}</h3>
             <p>{desc}</p>
-            <span>
-              Created By: <span>1st of January</span>
-            </span>
+            {/* <span>
+              Created By: <span>{format(createdAt)}</span>
+            </span> */}
           </div>
           <div className={classes.right}>
             {blogLikes}{" "}
